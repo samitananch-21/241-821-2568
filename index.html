@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,3 +50,56 @@
 </body>
 </html>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 1. Import ฟอนต์จาก Google โดยตรง */
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+<style>
+    /* 1. แต่งใคร ? (id, class DOM) 2.แต่งอะไร ? */ 
+    @font-face {
+        font-family: 'Kanit';
+        src: url(./Kanit/Kanit-Regular.ttf);
+    }
+    body {
+    background-color: rgb(250, 187, 255);  
+    font-family: 'Kanit';  
+    }
+    #register-form {
+    color: rgb(3, 19, 19);
+    padding-left: 10px;
+    margin: 10px;
+    border: 10px solid rgb(249, 216, 139);
+         
+    }
+    .form-control {
+    border: 2px solid rgb(0, 0, 0);
+    margin-bottom: 10px;
+    }
+
+</style>
+    <!-- ส่วนนี้จะแสดงผลบนหน้าเว็บ Browser -->
+</head>
+<body>
+    <!-- ส่วนนี้จะแสดงผลบนหน้าเว็บ Browser -->
+    <h1 id="register-form">Register Form</h1>
+    ชื่อ : <input class="form-control" name="name"><br>
+    นามสกุล : <input class="form-control" name="surname"><br>
+    อายุ : <input type="number" name="age" min="0" max="150"><br>
+    เพศ : <input type="radio" name="gender" value="male"> ชาย
+          <input type="radio" name="gender" value="female"> หญิง
+    งานอดิเรก : <input type="checkbox" name="hobby" value="reading"> อ่านหนังสือ
+                <input type="checkbox" name="hobby" value="traveling"> ท่องเที่ยว
+                <input type="checkbox" name="hobby" value="sports"> กีฬา<br>
+    คำอธิบายตัวเอง : <br>
+    <textarea name="description" rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Submit">
+</body>
+</html>
+
+>>>>>>> a04f00ebb6e475259e0ee8e1511917548cb541c0
