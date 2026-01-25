@@ -1,0 +1,114 @@
+/* 1. Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 2. Container Card */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* 3. Typography & Header */
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.header-form {
+    font-weight: 600;
+    min-width: 80px;
+    color: #555;
+}
+
+/* 4. Layout Helpers (Flexbox) */
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-input {
+    margin-bottom: 15px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* 5. Inputs & Textarea */
+.form {
+    flex: 1; /* ให้ input ขยายเต็มพื้นที่ที่เหลือ */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form:focus {
+    border-color: #4A90E2;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    resize: vertical;
+}
+
+/* 6. Radio & Checkbox Styling */
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.gender .flex {
+    flex-wrap: wrap; /* รองรับหน้าจอเล็ก */
+}
+
+/* 7. Button Style */
+.button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.button:hover {
+    background-color: #357ABD;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
