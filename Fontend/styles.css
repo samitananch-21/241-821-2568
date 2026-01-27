@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #f4f7f6;
+    background: linear-gradient(135deg, #ffe6f0, #fff5fa);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,30 +19,31 @@ body {
 .container {
     background-color: #ffffff;
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
     width: 100%;
     max-width: 500px;
+    border: 1px solid #ffd6e8;
 }
 
 /* 3. Typography & Header */
 .header {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    color: #333;
+    color: #d63384;
     text-align: center;
     margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #eee;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ffd6e8;
 }
 
 .header-form {
     font-weight: 600;
     min-width: 80px;
-    color: #555;
+    color: #b03060;
 }
 
-/* 4. Layout Helpers (Flexbox) */
+/* 4. Layout Helpers */
 .flex {
     display: flex;
     align-items: center;
@@ -56,59 +57,72 @@ body {
 .center {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 /* 5. Inputs & Textarea */
 .form {
-    flex: 1; /* ให้ input ขยายเต็มพื้นที่ที่เหลือ */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    flex: 1;
+    padding: 11px;
+    border: 1px solid #f2b5d4;
+    border-radius: 8px;
     outline: none;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    background-color: #fffafb;
 }
 
 .form:focus {
-    border-color: #4A90E2;
+    border-color: #ff69b4;
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
 }
 
 textarea {
     width: 100%;
     height: 100px;
     margin-top: 8px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    padding: 11px;
+    border: 1px solid #f2b5d4;
+    border-radius: 8px;
     resize: vertical;
+    background-color: #fffafb;
 }
 
-/* 6. Radio & Checkbox Styling */
-input[type="radio"], input[type="checkbox"] {
+textarea:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+}
+
+/* 6. Radio & Checkbox */
+input[type="radio"], 
+input[type="checkbox"] {
+    accent-color: #ff69b4;
     margin-right: 5px;
     cursor: pointer;
 }
 
 .gender .flex {
-    flex-wrap: wrap; /* รองรับหน้าจอเล็ก */
+    flex-wrap: wrap;
 }
 
 /* 7. Button Style */
 .button {
-    background-color: #4A90E2;
+    background: linear-gradient(135deg, #ff69b4, #ff85c1);
     color: white;
-    padding: 12px 30px;
+    padding: 12px 34px;
     border: none;
-    border-radius: 6px;
+    border-radius: 30px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 8px 18px rgba(255, 105, 180, 0.35);
+    transition: all 0.3s ease;
 }
 
 .button:hover {
-    background-color: #357ABD;
+    background: linear-gradient(135deg, #ff4fa3, #ff6fb7);
+    transform: translateY(-2px);
 }
 
 .button:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }

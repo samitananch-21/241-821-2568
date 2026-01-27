@@ -1,0 +1,29 @@
+docker run hello-world
+docker ps
+//docker list containers all
+docker ps --all
+docker run busybox echo 'hello world in docker
+docker run busybox ls
+docker run busybox ping google.com
+docker stop CONTAINERS ID
+docker pull busybox
+docker create busybox ping google.com
+docker start CONTAINERS ID
+
+docker start -a CONTAINERS ID
+
+docker system prune
+docker run nginx
+
+docker exec -it CONTAINERS ID ls
+
+docker exec -it CONTAINERS ID sh
+docker exec -it CONTAINERS ID bash
+
+cd /usr/share/nginx/html
+cat index.html
+
+docker run -p 80:80 nginx
+docker run -p 9000:80 nginx
+
+
