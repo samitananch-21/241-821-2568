@@ -1,66 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+/* 🌞 Light Mode */
+body.light {
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+/* กล่องฟอร์ม */
+.form-container {
+    width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.5s;
+    animation: fadeIn 1s ease;
+}
+
+/* Light */
+body.light .form-container {
+    background: rgba(255,255,255,0.9);
+    color: black;
+}
+
+/* Dark */
+body.dark .form-container {
+    background: rgba(0,0,0,0.6);
+    color: white;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* input */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* Light input */
+body.light .form-control {
+    background: #f1f1f1;
+}
+
+/* Dark input */
+body.dark .form-control {
+    background: #293979;
+    color: white;
+}
+
+/* focus */
+.form-control:focus {
+    box-shadow: 0 0 5px #7b5cff;
+}
+
+/* ปุ่ม */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Light button */
+body.light button {
+    background: #ff72ce;
+    color: white;
+}
+
+/* Dark button */
+body.dark button {
+    background: #0282a8;
+    color: black;
+}
+
+/* hover + animation */
+button:hover {
+    transform: scale(1.05);
+}
+
+/* ปุ่มสลับโหมด */
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+.message {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.message.success {
+    color: green;
+}
+
+.message.danger {
+    color: red;
+}
+</style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            Register form
-        </div>
-        <div class="flex form-input">
-            <div class="header-form">ชื่อ</div>
-            <input class="form" name="firstname" type="text">
-        </div>
-        <div class="flex form-input">
-            <div class="header-form">นามสกุล</div>
-            <input class="form" name="lastname" type="text">
-        </div>
-        <div class="flex form-input">
-            <div class="header-form">อายุ</div> 
-            <input class="form" name="age" type="number" min="0" max="100">
-        </div>
-        <div class="flex gender form-input">
-            <div class="header-form">เพศ</div> 
-            <div class="flex">
-                <div>
-                    <input name="gender" type="radio" value="ชาย"> ชาย
-                </div>
-                <div>
-                    <input name="gender" type="radio" value="หญิง"> หญิง
-                </div>
-                <div>
-                    <input name="gender" type="radio" value="อื่นๆ"> อื่นๆ
-                </div>
-            </div>
-        </div>
-        <div class="form-input">
-            งานอดิเรก
-            <div>
-                <input name="interests" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ
-            </div>
-            <div>
-                <input name="interests" type="checkbox" value="ดูหนัง"> ดูหนัง
-            </div>
-            <div>
-                <input name="interests" type="checkbox" value="ฟังเพลง"> ฟังเพลง
-            </div>
-        </div>
-        <div class="form-input">
-            คำอธิบาย
-            <textarea name="description"></textarea>
-        </div>
-        <div id="message" class="message"></div>
-        <div class="center">
-            <button onclick="submitData()" class="button">ส่งข้อมูล</button>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
-    <script src="index.js"></script>
+
+<body class="light">
+
+<button class="toggle-btn" onclick="toggleMode()">🌙 Dark</button>
+
+<div class="form-container">
+    <h2>Register</h2>
+
+    <form id="registerForm">
+        ชื่อ
+        <input name="firstname" class="form-control" placeholder="กรอกชื่อ">
+
+        นามสกุล
+        <input name="lastname" class="form-control" placeholder="กรอกนามสกุล">
+
+        อายุ
+        <input type="number" name="age" class="form-control">
+
+        เพศ <br>
+        <input type="radio" name="gender" value="ชาย"> ชาย
+        <input type="radio" name="gender" value="หญิง"> หญิง
+        <br><br>
+
+        งานอดิเรก <br>
+        <input type="checkbox" name="interests" value="อ่านหนังสือ"> อ่านหนังสือ
+        <input type="checkbox" name="interests" value="ท่องเที่ยว"> ท่องเที่ยว
+        <input type="checkbox" name="interests" value="กีฬา"> กีฬา
+        <br><br>
+
+        คำอธิบายตัวเอง
+        <textarea name="description" class="form-control"></textarea>
+
+        <button type="submit">สมัคร</button>
+        <div id="message"></div>
+    </form>
+</div>
+
+<script>
+function toggleMode() {
+    const body = document.body;
+    const btn = document.querySelector('.toggle-btn');
+
+    if (body.classList.contains('light')) {
+        body.classList.remove('light');
+        body.classList.add('dark');
+        btn.innerText = "☀️ Light";
+    } else {
+        body.classList.remove('dark');
+        body.classList.add('light');
+        btn.innerText = "🌙 Dark";
+    }
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="index.js"></script>
+
 </body>
 </html>
